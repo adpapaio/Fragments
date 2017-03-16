@@ -8,16 +8,19 @@
 
 
 
-    <fragment
-        android:id="@+id/listFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        class="papaioannou.aris.professorrating.ProfListFragment"
-        tools:layout="@layout/fragment_prof_list" />
+
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+    </FrameLayout>
+        <fragment
+            android:id="@+id/listFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            class="papaioannou.aris.professorrating.ProfListFragment"
+            tools:layout="@layout/fragment_prof_list"/>
+
 
 </LinearLayout>

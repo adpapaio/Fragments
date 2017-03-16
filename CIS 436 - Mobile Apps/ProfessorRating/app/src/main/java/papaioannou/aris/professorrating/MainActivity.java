@@ -2,6 +2,7 @@ package papaioannou.aris.professorrating;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends Activity {
 
@@ -33,7 +35,9 @@ public class MainActivity extends Activity {
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array_prof_list);
 
+
         profList.setAdapter(arrayAdapter);
+
 
     }
 }

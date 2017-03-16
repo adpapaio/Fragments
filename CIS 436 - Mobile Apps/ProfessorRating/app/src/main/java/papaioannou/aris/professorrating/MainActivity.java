@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_prof_list);
 
+
         ListView profList = (ListView) findViewById(R.id.professor_list);
 
         List<String> array_prof_list = new ArrayList<String>();
@@ -37,7 +38,6 @@ public class MainActivity extends Activity {
 
 
         profList.setAdapter(arrayAdapter);
-
 
     }
 }

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="papaioannou.aris.professorrating.MainActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
 
-   <fragment
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/titles"
-       class="papaioannou.aris.professorrating.Titles"></fragment>
-</FrameLayout>
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        class="papaioannou.aris.professorrating.ProfListFragment"
+        tools:layout="@layout/fragment_prof_list" />
+
+</LinearLayout>

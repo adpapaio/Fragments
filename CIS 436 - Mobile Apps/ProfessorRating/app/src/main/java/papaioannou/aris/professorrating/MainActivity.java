@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity implements ProfListFragment.OnItemClickListener{
+public class MainActivity extends FragmentActivity implements ProfListFragment.OnItemClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

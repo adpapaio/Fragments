@@ -47,7 +47,7 @@
         android:layout_toStartOf="@+id/baughp" />
 
     <RatingBar
-        android:id="@+id/ratingBar2"
+        android:id="@+id/baughRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

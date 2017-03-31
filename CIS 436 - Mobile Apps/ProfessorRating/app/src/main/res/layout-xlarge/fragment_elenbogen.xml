@@ -11,49 +11,41 @@
         android:id="@+id/elenbogenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
         android:text="Bruce Elenbogen"
         android:textSize="24sp"
-        tools:text="Bruce Elenbogen"
-        android:layout_marginRight="83dp"
-        android:layout_marginEnd="83dp"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/elenbogenPic"
-        android:layout_toStartOf="@+id/elenbogenPic" />
+        tools:text="Bruce Elenbogen" />
 
     <ImageView
         android:id="@+id/elenbogenPic"
-        android:layout_width="200dp"
+        android:layout_width="400dp"
         android:layout_height="200dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/elenbogen"
         android:visibility="visible"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_above="@+id/elenRating"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
+        android:layout_below="@+id/elenbogenName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/elenbogenName"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="61dp"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="21dp"
         android:text="Associate Professor, Computer and Information Science \n Education: \n PhD, Applied Mathematics at Northwestern University \n MS, Computer Science at University of Michigan \n BA, Math and Physics at Carleton College \n Fun Fact: \n That is a nice Mustache"
-        android:textSize="10sp" />
+        android:textSize="16sp"
+        android:layout_alignTop="@+id/elenbogenPic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <RatingBar
         android:id="@+id/elenRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="174dp"
-        android:layout_marginEnd="174dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/elenbogenPic"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

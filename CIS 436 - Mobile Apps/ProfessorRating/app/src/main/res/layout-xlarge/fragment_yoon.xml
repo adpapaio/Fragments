@@ -31,19 +31,20 @@
         android:id="@+id/yoonInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Associate Professor, Computer and Information Science. \n Education: \n PhD, Computer Science, Wayne State University \n Fun Fact: \n Computer Graphics is his Research Area"
-        android:textSize="10sp"
-        android:layout_below="@+id/yoonName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp" />
+        android:layout_below="@+id/yoonName"
+        android:layout_marginTop="25dp"
+        android:text="Associate Professor, Computer and Information Science. \n Education: \n PhD, Computer Science, Wayne State University \n Fun Fact: \n Computer Graphics is his Research Area"
+        android:textSize="14sp" />
 
     <RatingBar
         android:id="@+id/yoonRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/yoonPic"
         android:layout_alignLeft="@+id/yoonName"
-        android:layout_alignStart="@+id/yoonName" />
+        android:layout_alignStart="@+id/yoonName"
+        android:layout_marginTop="64dp" />
 
 </RelativeLayout>

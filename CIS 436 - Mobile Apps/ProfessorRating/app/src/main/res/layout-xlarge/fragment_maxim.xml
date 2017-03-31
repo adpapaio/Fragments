@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="papaioannou.aris.professorrating.MaximFragment"
+    android:background="#ffffffff">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bruce Maxim"
+        android:textSize="24sp"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/maximHeader" />
+
+    <ImageView
+        android:id="@+id/maximPic"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/maxim"
+        android:layout_below="@+id/maximHeader"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/maximInfo"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:text="Associate Professor, Computer and Information Science \n Education: \n PhD, Mathematics Education at University of Michigan \n MA, Mathematics Education at University of Michigan \n BS Ed, Mathematics Education at University of Michigan \n Fun Fact: \n He is a Published Author"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/maximPic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RatingBar
+        android:id="@+id/maximBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maximInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+</RelativeLayout>

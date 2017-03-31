@@ -24,30 +24,31 @@
         android:scaleType="fitCenter"
         android:visibility="visible"
         android:src="@drawable/baughpicture"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/baughText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/baughInfo"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="none"
         android:text="Education: \n PhD(in Progress) Information Systems Engineering at UMD \n MS, Computer Science at UMD \n BS, Computer Science at UMD \n Fun Fact: \n Enjoys long walks on the beach"
         android:textSize="14sp"
-        android:layout_below="@+id/baughp"
+        android:layout_alignTop="@+id/baughp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp" />
+        android:layout_toLeftOf="@+id/baughText"
+        android:layout_toStartOf="@+id/baughText" />
 
     <RatingBar
         android:id="@+id/baughRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/baughp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp" />
+        android:layout_marginTop="53dp" />
 
 </RelativeLayout>

@@ -56,70 +56,80 @@ public class ProfListFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i == 0)
                 {
+                    Fragment fragment = new BaughFragment();
+
                      if (getActivity().getResources().getConfiguration().orientation == 2 ||
                              ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                                      == Configuration.SCREENLAYOUT_SIZE_LARGE))
                      {
-                         Fragment fragment = new BaughFragment();
+                         setProfBundle(fragment, "0");
                          replaceLargeFrag(fragment);
 
                      }
                     else
                      {
                          Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
-                         Fragment fragment = new BaughFragment();
+                         setProfBundle(fragment, "0");
                          replaceFrag(fragment);
                      }
 
                 }
                 if(i == 1)
                 {
+                    Fragment fragment = new YoonFragment();
+
                     if (getActivity().getResources().getConfiguration().orientation == 2 ||
                             ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                                     == Configuration.SCREENLAYOUT_SIZE_LARGE))
                     {
-                        Fragment fragment = new YoonFragment();
+                        setProfBundle(fragment, "1");
                         replaceLargeFrag(fragment);
 
                     }
                     else
                     {
                         Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
-                        Fragment fragment = new YoonFragment();
+                        setProfBundle(fragment, "1");
                         replaceFrag(fragment);
                     }
                 }
                 if(i == 2)
                 {
+                    Fragment fragment = new MaximFragment();
                     if (getActivity().getResources().getConfiguration().orientation == 2 ||
                             ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                                     == Configuration.SCREENLAYOUT_SIZE_LARGE))
                     {
-                        Fragment fragment = new MaximFragment();
+                        setProfBundle(fragment, "2");
                         replaceLargeFrag(fragment);
 
                     }
                     else
                     {
                         Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
-                        Fragment fragment = new MaximFragment();
+
+                        setProfBundle(fragment, "2");
                         replaceFrag(fragment);
                     }
                 }
                 if(i == 3)
                 {
+                    Fragment fragment = new ElenbogenFragment();
+
                     if (getActivity().getResources().getConfiguration().orientation == 2 ||
                             ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                                     == Configuration.SCREENLAYOUT_SIZE_LARGE))
                     {
-                        Fragment fragment = new ElenbogenFragment();
+
+                        setProfBundle(fragment, "3");
                         replaceLargeFrag(fragment);
 
                     }
                     else
                     {
                         Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
-                        Fragment fragment = new ElenbogenFragment();
+
+                        setProfBundle(fragment, "3");
                         replaceFrag(fragment);
                     }
                 }
@@ -133,11 +143,13 @@ public class ProfListFragment extends Fragment {
                                 ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                                         == Configuration.SCREENLAYOUT_SIZE_LARGE)) {
 
+                            setProfBundle(fragment, "4");
                             replaceLargeFrag(fragment);
 
                         } else {
                             Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
 
+                            setProfBundle(fragment, "4");
                             replaceFrag(fragment);
                         }
                     }
@@ -153,13 +165,13 @@ public class ProfListFragment extends Fragment {
     }
 
 
-public void replaceFrag(Fragment frag)
-{
-    FragmentTransaction trans = getFragmentManager().beginTransaction();
-    trans.replace(R.id.fragment, frag);
-    trans.addToBackStack(null);
-    trans.commit();
-}
+    public void replaceFrag(Fragment frag)
+    {
+        FragmentTransaction trans = getFragmentManager().beginTransaction();
+        trans.replace(R.id.fragment, frag);
+        trans.addToBackStack(null);
+        trans.commit();
+    }
 
     public void replaceLargeFrag(Fragment frag)
     {
@@ -179,5 +191,13 @@ public void replaceFrag(Fragment frag)
         fragTrans.replace(R.id.info_frag, newFrag);
         fragTrans.addToBackStack(null);
         fragTrans.commit();
+    }
+
+    public void setProfBundle(Fragment frag, String info)
+    {
+        Bundle args = new Bundle();
+        args.putString("profnum", info);
+        Log.d("Creating args:" , args.toString());
+        frag.setArguments(args);
     }
 }

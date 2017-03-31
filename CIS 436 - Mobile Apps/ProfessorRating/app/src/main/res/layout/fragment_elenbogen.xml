@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="papaioannou.aris.professorrating.ElenbogenFragment"
+    android:background="#ffffffff">
+
+
+    <TextView
+        android:id="@+id/elenbogenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="Bruce Elenbogen"
+        android:textSize="24sp"
+        tools:text="Bruce Elenbogen" />
+
+    <ImageView
+        android:id="@+id/elenbogenPic"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/elenbogenName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/elenbogen"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/elenbogenPic"
+        android:layout_alignStart="@+id/elenbogenPic"
+        android:layout_below="@+id/elenbogenPic"
+        android:layout_marginTop="8dp"
+        android:text="Associate Professor, Computer and Information Science \n Education: \n PhD, Applied Mathematics at Northwestern University \n MS, Computer Science at University of Michigan \n BA, Math and Physics at Carleton College \n Fun Fact: \n That is a nice Mustache"
+        android:textSize="16sp" />
+
+    <RatingBar
+        android:id="@+id/elenRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+</RelativeLayout>

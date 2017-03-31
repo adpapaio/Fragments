@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="papaioannou.aris.professorrating.YoonFragment"
+    android:background="#ffffffff">
+
+
+    <TextView
+        android:id="@+id/yoonName"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="David Yoon"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/yoonPic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/yoon"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/yoonRating"
+        android:layout_toEndOf="@+id/yoonRating" />
+
+    <TextView
+        android:id="@+id/yoonInfo"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:text="Associate Professor, Computer and Information Science. \n Education: \n PhD, Computer Science, Wayne State University \n Fun Fact: \n Computer Graphics is his Research Area"
+        android:textStyle="bold"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RatingBar
+        android:id="@+id/yoonRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yoonInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+</RelativeLayout>

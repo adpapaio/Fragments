@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="papaioannou.aris.professorrating.KessFragment"
+    android:background="#ffffffff">
+
+
+    <TextView
+        android:id="@+id/kessName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Maroune Kessentini"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/kessPic"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/kess"
+        android:layout_below="@+id/kessName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/kessInfo"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/kessPic"
+        android:text="Assistant Professor, Computer and Information Science \n Education: \n PhD, University of Montreal \n Research Areas: \n Software Engineering \n Teaching Areas: \n Computer and Information Science  Software Engineering \n Fun Fact: \n He is on this mobile application" />
+
+    <RatingBar
+        android:id="@+id/kessRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kessInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp" />
+
+</RelativeLayout>

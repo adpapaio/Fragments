@@ -3,18 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="papaioannou.aris.professorrating.ProfInfoFragment">
+    tools:context="papaioannou.aris.professorrating.ProfInfoFragment"
+    android:id="@+id/frag_prof_info"
+    android:background="#ffffff">
 
 
     <TextView
         android:id="@+id/profName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=" "
         android:layout_marginTop="29dp"
         android:layout_marginLeft="150dp"
         android:layout_marginStart="150dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 </RelativeLayout>

@@ -1,15 +1,25 @@
 package papaioannou.aris.professorrating;
 
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +27,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfListFragment extends Fragment implements AdapterView.OnItemClickListener{
+public class ProfListFragment extends Fragment {
 
 
     public ProfListFragment() {
@@ -40,34 +50,134 @@ public class ProfListFragment extends Fragment implements AdapterView.OnItemClic
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, array_prof_list);
         profList.setAdapter(arrayAdapter);
+
+        profList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i == 0)
+                {
+                     if (getActivity().getResources().getConfiguration().orientation == 2 ||
+                             ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+                                     == Configuration.SCREENLAYOUT_SIZE_LARGE))
+                     {
+                         Fragment fragment = new BaughFragment();
+                         replaceLargeFrag(fragment);
+
+                     }
+                    else
+                     {
+                         Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
+                         Fragment fragment = new BaughFragment();
+                         replaceFrag(fragment);
+                     }
+
+                }
+                if(i == 1)
+                {
+                    if (getActivity().getResources().getConfiguration().orientation == 2 ||
+                            ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+                                    == Configuration.SCREENLAYOUT_SIZE_LARGE))
+                    {
+                        Fragment fragment = new YoonFragment();
+                        replaceLargeFrag(fragment);
+
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
+                        Fragment fragment = new YoonFragment();
+                        replaceFrag(fragment);
+                    }
+                }
+                if(i == 2)
+                {
+                    if (getActivity().getResources().getConfiguration().orientation == 2 ||
+                            ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+                                    == Configuration.SCREENLAYOUT_SIZE_LARGE))
+                    {
+                        Fragment fragment = new MaximFragment();
+                        replaceLargeFrag(fragment);
+
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
+                        Fragment fragment = new MaximFragment();
+                        replaceFrag(fragment);
+                    }
+                }
+                if(i == 3)
+                {
+                    if (getActivity().getResources().getConfiguration().orientation == 2 ||
+                            ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+                                    == Configuration.SCREENLAYOUT_SIZE_LARGE))
+                    {
+                        Fragment fragment = new ElenbogenFragment();
+                        replaceLargeFrag(fragment);
+
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
+                        Fragment fragment = new ElenbogenFragment();
+                        replaceFrag(fragment);
+                    }
+                }
+                if(i == 4)
+                {
+                    Fragment fragment = new KessFragment();
+
+                    if(fragment != null)
+                    {
+                        if (getActivity().getResources().getConfiguration().orientation == 2 ||
+                                ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+                                        == Configuration.SCREENLAYOUT_SIZE_LARGE)) {
+
+                            replaceLargeFrag(fragment);
+
+                        } else {
+                            Toast.makeText(getActivity(), "My Milkshakes", Toast.LENGTH_SHORT).show();
+
+                            replaceFrag(fragment);
+                        }
+                    }
+                    else
+                    {
+                        replaceNull();
+                    }
+                }
+            }
+        });
+
         return view;
     }
 
 
+public void replaceFrag(Fragment frag)
+{
+    FragmentTransaction trans = getFragmentManager().beginTransaction();
+    trans.replace(R.id.fragment, frag);
+    trans.addToBackStack(null);
+    trans.commit();
+}
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+    public void replaceLargeFrag(Fragment frag)
     {
-        ListView profList = (ListView) view.findViewById(R.id.professor_list);
-
-        profList.setOnItemClickListener(this);
-        AdapterView.OnItemClickListener listener = profList.getOnItemClickListener();
-        listener.equals(position);
-
-        if(position == 0)
-        {
-           Fragment next = new Fragment();
-            this.getFragmentManager().beginTransaction().replace(R.id.professor_list, next, String.valueOf(getActivity().getFragmentManager())).addToBackStack(null).commit();
-            Toast.makeText(getActivity(), "Hello", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            Toast.makeText(getActivity(), "GoodBye", Toast.LENGTH_SHORT).show();
-        }
-
+        FragmentTransaction trans = getFragmentManager().beginTransaction();
+        trans.replace(R.id.info_frag, frag);
+        trans.addToBackStack(null);
+        trans.commit();
     }
 
-    public interface OnItemClickListener {
-
+    public void replaceNull()
+    {
+        ProfInfoFragment newFrag = new ProfInfoFragment();
+        Bundle args = new Bundle();
+        newFrag.setArguments(args);
+        FragmentManager fragMan = getFragmentManager();
+        FragmentTransaction fragTrans = fragMan.beginTransaction();
+        fragTrans.replace(R.id.info_frag, newFrag);
+        fragTrans.addToBackStack(null);
+        fragTrans.commit();
     }
 }

@@ -14,22 +14,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends FragmentActivity implements ProfListFragment.OnItemClickListener{
+public class MainActivity extends FragmentActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("Hello", "SetConsergsdgdesgerswgtentView");
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_one);
-        Log.d("Hello", "SetContentView");
+
 
     }
+
 
 
 }

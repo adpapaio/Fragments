@@ -11,4 +11,5 @@
         android:layout_height="wrap_content"
         class="papaioannou.aris.professorrating.ProfListFragment"
         tools:layout="@layout/frag_prof_list"/>
+
 </LinearLayout>

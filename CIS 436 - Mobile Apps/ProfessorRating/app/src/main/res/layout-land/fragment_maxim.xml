@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="papaioannou.aris.professorrating.MaximFragment"
+    android:background="#ffffffff">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bruce Maxim"
+        android:textSize="24sp"
+        android:layout_marginTop="22dp"
+        android:id="@+id/maximHeader"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="119dp"
+        android:layout_marginStart="119dp" />
+
+    <ImageView
+        android:id="@+id/maximPic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/maxim"
+        android:layout_above="@+id/maximBar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/maximInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/maximHeader"
+        android:layout_marginTop="32dp"
+        android:text="Associate Professor, Computer and Information Science \n Education: \n PhD, Mathematics Education at University of Michigan \n MA, Mathematics Education at University of Michigan \n BS Ed, Mathematics Education at University of Michigan \n Fun Fact: \n He is a Published Author"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/maximBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>

@@ -1,5 +1,9 @@
-package papaioannou.aris.professorrating;
+/* Created by: Aristotelis Papaioannou
+ * This Class is a blank fragment on purpose
+ * For easier implementing of other fragments
+*/
 
+package papaioannou.aris.professorrating;
 
 import android.os.Bundle;
 import android.app.Fragment;

@@ -1,5 +1,8 @@
-package papaioannou.aris.professorrating;
+/* Created by: Aristotelis Papaioannou
+ * This Class is for the Maroune Kessentini Fragment
+*/
 
+package papaioannou.aris.professorrating;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,9 +19,9 @@ import android.widget.RatingBar;
  */
 public class KessFragment extends Fragment {
 
-    RatingBar kessBar;
-    SharedPreferences kessPref;
-    SharedPreferences.Editor editor;
+    RatingBar kessBar; //Rating Bar for Maroune Kessentini
+    SharedPreferences kessPref; //Preferences for Maroune Kessentini
+    SharedPreferences.Editor editor; //basic Shared Preferences Editor
 
     public KessFragment() {
         // Required empty public constructor
@@ -32,46 +35,47 @@ public class KessFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_kess, container, false);
     }
 
+    //When the Activity is Created
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
-        Bundle bundle = getArguments();
-        Log.d("RatingBar", "Bundle is "+ bundle);
-        if(bundle != null)
+        Bundle bundle = getArguments(); //Get this bundles arguments
+        Log.d("RatingBar", "Bundle is "+ bundle); //Testing Purposes, will appear in Android Monitor
+        if(bundle != null) //if the bundle is not null
         {
-
-            String num = bundle.getString("profnum");
-            Log.d("RatingBar", "num is " +num);
-            setMaximRating(num);
+            String num = bundle.getString("profnum"); //set the num to the bundles profnum
+            Log.d("RatingBar", "num is " +num); //Testing Purposes , appears in Android Monitor
+            setKessRating(num); //Call the function pass in num
 
         }
     }
 
-
-    public void setMaximRating(String num)
+    //seting the rating bar for Maroune Kessentini
+    public void setKessRating(String num)
     {
-        kessBar = (RatingBar) getView().findViewById(R.id.kessRate);
-        kessPref = getActivity().getSharedPreferences(num, 0);
+        kessBar = (RatingBar) getView().findViewById(R.id.kessRate); //Find the bar for Maroune Kessentini
+        kessPref = getActivity().getSharedPreferences(num, 0); //get the preferences
         float rating = kessPref.getFloat(num, 0);
-        kessBar.setRating(rating);
+        kessBar.setRating(rating);  //set the default rating pulled from preferences, 0 is default
 
-        setRating(num);
+        setRating(num);//set the rating OnChangeListener is in here
     }
 
+    //set the rating with the changes, if any
     public void setRating(final String num)
     {
         kessPref = getActivity().getSharedPreferences(num, 1);
         editor = kessPref.edit();
 
+        //Maroune Kessentini rating bar listener
         kessBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                editor.putFloat(num, kessBar.getRating());
-                editor.commit();
-                Log.d("RatingBar", "It changed to" + num);
+                editor.putFloat(num, kessBar.getRating()); //put the num in the rating bar
+                editor.commit(); //commit the changes
+                Log.d("RatingBar", "It changed to" + num); //Testing Purposes, appears in Android Monitor
             }
         });
     }
-
 }

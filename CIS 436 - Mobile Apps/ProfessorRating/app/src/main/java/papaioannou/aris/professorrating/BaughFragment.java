@@ -1,102 +1,80 @@
-package papaioannou.aris.professorrating;
+/* Created by: Aristotelis Papaioannou
+**This class is for the John Baugh Fragment**
+*/
 
+package papaioannou.aris.professorrating;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class BaughFragment extends Fragment  {
 
-    RatingBar baughBar;
-    SharedPreferences baughPref;
-    SharedPreferences.Editor editor;
+    RatingBar baughBar; //Rating Bar for John Baugh
+    SharedPreferences baughPref;    //Pull the preferences for JohnBaugh
+    SharedPreferences.Editor editor; //Bsic sharedpreferences editor
 
     public BaughFragment() {
         // Required empty public constructor
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_baugh, container, false);
-        Log.d("RatingBar", "Imade it to oncreateview");
+        View view = inflater.inflate(R.layout.fragment_baugh, container, false); //Inflate the Fragment
 
-      /*  baughBar = (RatingBar) view.findViewById(R.id.baughRate);
-        baughPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-
-        float rating = baughPref.getFloat("num", 0f);
-
-
-        baughBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                final int num = baughBar.getNumStars();
-                editor = baughPref.edit();
-                editor.putFloat("num", rating);
-                editor.commit();
-                int ratings = baughPref.getInt("num", 0);
-            }
-        });
-
-        baughBar.setRating(rating);*/
-        // Inflate the layout for this fragment
+        // return the current view
         return view;
-
     }
 
+    //when the activity is created
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
-        super.onActivityCreated(savedInstanceState);
-        Bundle bundle = getArguments();
+        super.onActivityCreated(savedInstanceState); //Create the super
+        Bundle bundle = getArguments(); //Get this bundles arguments
         Log.d("RatingBar", "Bundle is "+ bundle);
-        if(bundle != null)
+        if(bundle != null)  //If there are arguments go inside
         {
-            String num = bundle.getString("profnum");
+            String num = bundle.getString("profnum");   //set num to the bundle profnum argument
             Log.d("Bundle dbnfuo", "num is " + num);
-            setPrefRating(num);
-
+            setPrefRating(num); //send the argument to the set rating function
         }
     }
 
+    //set the default rating, pulled from preferences
   public void setPrefRating(String num)
   {
-      baughBar = (RatingBar) getView().findViewById(R.id.baughRate);
-      baughPref = getActivity().getSharedPreferences(num, 0);
-      float rating = baughPref.getFloat(num, 0);
-      baughBar.setRating(rating);
+      baughBar = (RatingBar) getView().findViewById(R.id.baughRate); //pull the John Baugh Rating Bar
+      baughPref = getActivity().getSharedPreferences(num, 0); //In this activity get the activities shared preferences
+      float rating = baughPref.getFloat(num, 0); //set rating to the saved rating, default 0
+      baughBar.setRating(rating); //set the rating based on what the rating gets set to
 
-      setRating(num);
+      setRating(num); //set the rating (For OnChange Listener)
   }
 
+  //set the bars new rating
   public void setRating(final String num)
   {
-      baughPref = getActivity().getSharedPreferences(num, 1);
-      editor = baughPref.edit();
+      baughPref = getActivity().getSharedPreferences(num, 1); //get the preferences
+      editor = baughPref.edit(); //edit the preferences
 
       baughBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
           @Override
           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-              editor.putFloat(num, baughBar.getRating());
-              editor.commit();
-              Log.d("RatingBar", "It changed to" + num);
+              editor.putFloat(num, baughBar.getRating()); //set the preferenced rating
+              editor.commit(); //commit that rating to the preferences suing editor
+              Log.d("RatingBar", "It changed to" + num); //Test for the Log
           }
       });
   }
-
-
-
 }

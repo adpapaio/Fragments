@@ -1,5 +1,6 @@
 package com.example.adpapaio.cis436_professorrating;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,16 +9,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.widget.Toast;
 
-public class MainScreen extends AppCompatActivity {
+
+public class MainScreen extends Activity implements MainScreenFragment.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        System.out.println("hello");
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +51,18 @@ public class MainScreen extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+//    @Override
+//    public void SelectedProfessor(String prof) {
+//        // DetailsFragment fragment = (DetailsFragment) getFragmentManager().findFragmentById(R.id.fragment);
+//    }
+
+    @Override
+    public void SelectedProfessor(String prof)
+    {
+        System.out.println("im here");
+       //Toast.makeText(this, "HERFHEHE", Toast.LENGTH_SHORT).show();
     }
 
 

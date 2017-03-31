@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.adpapaio.cis436_professorrating.MainScreenFragment"
+    tools:context="com.example.adpapaio.cis436_professorrating.MainScreen"
     tools:showIn="@layout/activity_main_screen">
 
     <TextView
@@ -63,6 +63,10 @@
         android:layout_alignLeft="@+id/steinerButt"
         android:layout_alignStart="@+id/steinerButt"
         android:layout_marginTop="13dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </RelativeLayout>

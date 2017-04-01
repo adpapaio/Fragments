@@ -214,7 +214,6 @@ public class ProfListFragment extends Fragment {
     {
         Bundle args = new Bundle(); //get a new bundle
         args.putString("profnum", info); //set eh arg profnum, to info which is passed based on position abvoe
-        Log.d("Creating args:" , args.toString()); // Testing Purposes, appears in Android Monitor
         frag.setArguments(args); //Set the Arguments
     }
 }

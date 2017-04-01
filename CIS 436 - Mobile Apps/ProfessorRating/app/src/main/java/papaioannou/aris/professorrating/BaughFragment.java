@@ -42,11 +42,9 @@ public class BaughFragment extends Fragment  {
     {
         super.onActivityCreated(savedInstanceState); //Create the super
         Bundle bundle = getArguments(); //Get this bundles arguments
-        Log.d("RatingBar", "Bundle is "+ bundle);
         if(bundle != null)  //If there are arguments go inside
         {
             String num = bundle.getString("profnum");   //set num to the bundle profnum argument
-            Log.d("Bundle dbnfuo", "num is " + num);
             setPrefRating(num); //send the argument to the set rating function
         }
     }
@@ -73,7 +71,6 @@ public class BaughFragment extends Fragment  {
           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
               editor.putFloat(num, baughBar.getRating()); //set the preferenced rating
               editor.commit(); //commit that rating to the preferences suing editor
-              Log.d("RatingBar", "It changed to" + num); //Test for the Log
           }
       });
   }

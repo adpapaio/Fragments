@@ -42,11 +42,9 @@ public class YoonFragment extends Fragment {
     {
         super.onActivityCreated(savedInstanceState);
         Bundle bundle = getArguments(); //Get this bundles arguments
-        Log.d("RatingBar", "Bundle is "+ bundle); //For Testing Purposes, appears in Android Monitor
         if(bundle != null) //If the bundle is not null
         {
             String num = bundle.getString("profnum"); //set num to the bundles profnum
-            Log.d("RatingBar", "num is " +num); //For Testing Purposes, appears in Android Monitor
             setYoonRating(num); //Call Function, pass in num
         }
     }
@@ -73,7 +71,6 @@ public class YoonFragment extends Fragment {
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 editor.putFloat(num, yoonBar.getRating()); //put the new rating in num
                 editor.commit(); //commit these changes
-                Log.d("RatingBar", "It changed to" + num); //For Testing Purposes, appears in Android Monitor
             }
         });
     }

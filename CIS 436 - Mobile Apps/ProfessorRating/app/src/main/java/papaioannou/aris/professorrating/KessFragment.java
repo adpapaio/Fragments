@@ -41,11 +41,9 @@ public class KessFragment extends Fragment {
     {
         super.onActivityCreated(savedInstanceState);
         Bundle bundle = getArguments(); //Get this bundles arguments
-        Log.d("RatingBar", "Bundle is "+ bundle); //Testing Purposes, will appear in Android Monitor
         if(bundle != null) //if the bundle is not null
         {
             String num = bundle.getString("profnum"); //set the num to the bundles profnum
-            Log.d("RatingBar", "num is " +num); //Testing Purposes , appears in Android Monitor
             setKessRating(num); //Call the function pass in num
 
         }
@@ -74,7 +72,6 @@ public class KessFragment extends Fragment {
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 editor.putFloat(num, kessBar.getRating()); //put the num in the rating bar
                 editor.commit(); //commit the changes
-                Log.d("RatingBar", "It changed to" + num); //Testing Purposes, appears in Android Monitor
             }
         });
     }

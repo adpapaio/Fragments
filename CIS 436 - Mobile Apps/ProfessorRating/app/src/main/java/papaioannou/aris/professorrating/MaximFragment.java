@@ -45,7 +45,6 @@ public class MaximFragment extends Fragment {
         if(bundle != null) //if the bundle is not null
         {
             String num = bundle.getString("profnum"); //set the string to the bundles arg
-            Log.d("RatingBar", "num is " +num); //Testing purposes, appears in the Android Monitor
             setMaximRating(num); //call the function and pass in num
         }
     }
@@ -73,7 +72,6 @@ public class MaximFragment extends Fragment {
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 editor.putFloat(num, maxBar.getRating()); //get the new rating and put it in num
                 editor.commit(); //commit the changes
-                Log.d("RatingBar", "It changed to" + num); //Testing purposes, appears in Android Monitor
             }
         });
     }
